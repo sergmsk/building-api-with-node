@@ -1,6 +1,9 @@
 var express = require('express');//запускаем библиотеку express
-
+var bodyParser = require('body-parser');
 var app = express();//наш веб-сервер
+
+app.use(bodyParser.json());//парсинг JSON на странице
+app.use(bodyParser.urlencoded({extended:true}));//парсинг данных формы
 
 /*роутинг для приложения: что будет происходить при заходе на опредеоенный URL*/
 //request and response - запрос и ответ
